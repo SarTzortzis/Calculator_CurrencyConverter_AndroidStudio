@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //Calculator Colors
+    <color name="darkGray">#222831</color>
+    <color name="lightGray">#393E46</color>
+    <color name="equals">#D65A31</color>
+    <color name="textColor">#EEEEEE</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
