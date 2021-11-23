@@ -13,7 +13,7 @@ import android.widget.Toast;
 public class CalculatorActivity extends AppCompatActivity {
 
     //Edit Text elements
-    private EditText calculation,result;
+    private EditText calculation;
     //Edit Text expressions, (curr = topEditText, res = botEditText)
     private String curr,res;
     //Numbers
@@ -32,7 +32,7 @@ public class CalculatorActivity extends AppCompatActivity {
 
         calculation= (EditText) findViewById(R.id.calculation);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        result=(EditText) findViewById(R.id.result);
+
 
 
         setupVariables();
@@ -50,7 +50,6 @@ public class CalculatorActivity extends AppCompatActivity {
         dot=false;
         operator=false;
         calculation.setShowSoftInputOnFocus(false);
-        result.setShowSoftInputOnFocus(false);
     }
 
 
@@ -319,11 +318,10 @@ public class CalculatorActivity extends AppCompatActivity {
                     }
 
                     //result = current input + " = " + result
-                    res =curr+" = "+res;
-                    //Printing the result
-                    displayTwo();
+                    curr=res;
+
                     //resetting variables for new calculations
-                    curr="";
+
                     displayOne();
                     operator=false;
                     dot=false;
@@ -342,11 +340,7 @@ public class CalculatorActivity extends AppCompatActivity {
         calculation.setText(curr);
         setCursor();
     }
-    //Displaying result to second EditText
-    public void displayTwo(){
-        result.setText(res);
-        setCursor();
-    }
+
     //Clears EditTexts and variables
     public void clear(){
         curr = "";
@@ -354,7 +348,7 @@ public class CalculatorActivity extends AppCompatActivity {
         dot=false;
         operator=false;
         displayOne();
-        displayTwo();
+
     }
     //Deletes last char
     public void backspace(){
